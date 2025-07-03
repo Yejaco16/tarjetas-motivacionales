@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alarma Motivacional</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Registro -->
+    <section id="registro-section">
+      <label for="username">Ingresa tu nombre:</label>
+      <input type="text" id="username" placeholder="Tu nombre..." />
+      <button onclick="saveName()">Guardar</button>
+      <h2 id="greeting"></h2>
+      <p id="dailyMessage"></p>
+    </section>
+
+    <!-- Controles de alarma y voz -->
+    <section id="controles-section">
+      <h1>⏰ Alarma Motivacional</h1>
+
+      <label for="alarmTime">Elige la hora:</label>
+      <input type="time" id="alarmTime" />
+
+      <label for="alarmSoundSelect">Elige sonido de alarma:</label>
+      <select id="alarmSoundSelect">
+        <option value="sounds/alarm1.mp3">Campana suave</option>
+        <option value="sounds/alarm2.mp3">Timbre clásico</option>
+        <option value="sounds/alarm3.mp3">Melodía alegre</option>
+      </select>
+
+      <button onclick="setAlarm()">Guardar Alarma</button>
+
+      <div class="voice-selector">
+        <label>Elige la voz:</label>
+        <button onclick="setVoice('chico')" id="btnChico">🎧 Voz de Chico</button>
+        <button onclick="setVoice('chica')" id="btnChica">🎤 Voz de Chica</button>
+      </div>
+    </section>
+
+    <!-- Tarjeta motivacional (oculta inicialmente) -->
+    <section id="card" class="hidden">
+      <img id="avatar" src="img/chico.jpg" alt="Motivador" />
+      <h2 id="question"></h2>
+      <p id="answer" class="hidden"></p>
+      <button id="toggleQA">Mostrar Respuesta</button>
+    </section>
+  </div>
+
+  <audio id="alarmSound" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
